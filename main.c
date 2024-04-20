@@ -22,18 +22,18 @@ int main(int argc,char **argv)
 
     if(argc>=3)
     {
-        sscanf(argv[1],"%LX",&ser);
-        sscanf(argv[2],"%LX",&enc);
+        sscanf(argv[1],"%X",&ser);
+        sscanf(argv[2],"%X",&enc);
     }
     else
     {
         printf("Enter SER (HEX):");
-        scanf("%LX",&ser);
+        scanf("%X",&ser);
         printf("Enter 32bit LSB of KEY (HEX):");
-        scanf("%LX",&enc);
+        scanf("%X",&enc);
     }
 
-    printf("Runing for SER=0X%LX KEY(LSB)=0X%LX\r\n",ser,enc);
+    printf("Runing for SER=0X%X KEY(LSB)=0X%X \n",ser,enc);
 
     while(key)
     {
@@ -42,12 +42,12 @@ int main(int argc,char **argv)
         if(g==enc)break;
         if(key%1000000==0)
         {
-            printf("Try %LX%LX \r\n",(uint32_t)(key>>32),(uint32_t)key);
+            printf("Try %X%X \n",(uint32_t)(key>>32),(uint32_t)key);
         }
         key--;
     }
 
-    printf("MF: %LX%LX \r\n",(uint32_t)(key>>32),(uint32_t)key);
+    printf("MF: %X%X \n",(uint32_t)(key>>32),(uint32_t)key);
 
     return 0;
 }
