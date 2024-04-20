@@ -42,12 +42,12 @@ int main(int argc,char **argv)
         if(g==enc)break;
         if(key%1000000==0)
         {
-            printf("Try %LX%LX \r\n",key>>32,key);
+            printf("Try %LX%LX \r\n",(uint32_t)(key>>32),(uint32_t)key);
         }
         key--;
     }
 
-    printf("MF: %LX%LX \r\n",key>>32,key);
+    printf("MF: %LX%LX \r\n",(uint32_t)(key>>32),(uint32_t)key);
 
     return 0;
 }

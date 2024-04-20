@@ -5,6 +5,6 @@ default: build
 build:
 	gcc main.c keeloq.c -o $(TARGET)
 
-run:build
+run:
 	./$(TARGET) DFFACD26 5143BDD8
 
