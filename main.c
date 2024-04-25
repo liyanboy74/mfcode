@@ -33,7 +33,7 @@ int main(int argc,char **argv)
         scanf("%X",&enc);
     }
 
-    printf("Runing for SER=0X%X KEY(LSB)=0X%X \n",ser,enc);
+    printf("Runing for SER=0X%X KEY(32bit LSB)=0X%X \n",ser,enc);
 
     while(key)
     {
