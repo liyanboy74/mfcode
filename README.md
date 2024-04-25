@@ -16,5 +16,8 @@ make
 
 but you need a supercomputer! ;)
 
+in Actions can be see that trying 3161551615 (HEX: BC7472FF) times take 6h time.<br>
+for full 64bit it need 3996378 years! :)
+
 
 
