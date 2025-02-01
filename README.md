@@ -5,12 +5,12 @@ See [keeloq key generator from manufacturer code](https://github.com/ioelectro/h
 
 run by github action:
 
-edit `Makefile` and add the `SER` and `KEY(32bit LSB)`.
+edit `Makefile` and add the `SER` and `KEY(32bit HSB)`.
 
 or run local:
 ```
 make
-./mfcode [SER] [KEY(32bit LSB)] 
+./mfcode [SER] [KEY(32bit HSB)] 
 ```
 *Example:* `./mfcode DFFACD26 5143BDD8`
 
