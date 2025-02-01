@@ -1,5 +1,4 @@
 TARGET=mfcode
-# DEFINES=-DDEBUG
 
 default: build
 
@@ -8,7 +7,7 @@ build:
 	gcc main.c keeloq.o -o $(TARGET) -I ./KeeLoq $(DEFINES)
 
 run:build
-	./$(TARGET) 6C46ACA C8768EE8
+	./$(TARGET) A9C2E0E1 CFD85AA5
 
 clean:
 	rm -f $(TARGET) *.o

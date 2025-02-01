@@ -12,7 +12,7 @@ or run local:
 make
 ./mfcode [SER] [KEY(32bit HSB)] 
 ```
-*Example:* `./mfcode 6C46ACA C8768EE8`
+*Example:* `./mfcode A9C2E0E1 CFD85AA5`
 
 but you need a supercomputer! ;)
 

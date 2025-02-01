@@ -30,12 +30,8 @@ int main(int argc,char **argv)
 {
     int i=0;
 
-#ifdef DEBUG
     // KEELOQ Key LSB-first
-    uint8_t mf_key[]= {0xef,0xce,0xab,0x89,0x67,0x45,0x23,0x01};
-#else
     uint8_t mf_key[]= {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
-#endif
 
     uint32_t enc,ser;
     uint32_t temp;
@@ -83,8 +79,10 @@ int main(int argc,char **argv)
         return 1;
     }
 
-    printf("MF: ");
+    printf("------------------------------------\r\n");
+    printf("Manufacturer Code:\r\n\t");
     print_key(mf_key);
+    printf("------------------------------------\r\n");
 
     return 0;
 }
