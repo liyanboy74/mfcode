@@ -8,7 +8,7 @@ void print_key(uint8_t *key)
     {
         printf("%02X ",key[i]);
     }
-    printf("\n");
+    printf("\r\n");
 }
 
 void key_minor(uint8_t *key)
@@ -28,7 +28,7 @@ void key_minor(uint8_t *key)
 
 int main(int argc,char **argv)
 {
-    int i=0;
+    int i=0,mode=0;
 
     // KEELOQ Key LSB-first
     uint8_t mf_key[]= {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
@@ -56,13 +56,21 @@ int main(int argc,char **argv)
         temp = ser;
         temp |= 0x60000000;
         keeloq_decrypt(mf_key,&temp,KEELOQ_NROUNDS);
-        if(temp==enc)break;
+        if(temp==enc)
+        {
+            mode=0;
+            break;
+        }
 
         // Test Secure Key
         temp = ser;
         ser &= 0x0fffffff;
         keeloq_decrypt(mf_key,&temp,KEELOQ_NROUNDS);
-        if(temp==enc)break;
+        if(temp==enc)
+        {
+            mode=1;
+            break;
+        }
 
         if(i++%1000000==0)
         {
@@ -82,6 +90,8 @@ int main(int argc,char **argv)
     printf("------------------------------------\r\n");
     printf("Manufacturer Code:\r\n\t");
     print_key(mf_key);
+    printf("mode: ");
+    (mode)?printf("Secure\r\n"):printf("Normal\r\n");
     printf("------------------------------------\r\n");
 
     return 0;
